@@ -1,0 +1,6 @@
+[
+    { "album": "Album 1", "artist": "Artist 1", "review": "Erinomainen!" },
+    { "album": "Album 2", "artist": "Artist 2", "review": "Ihan ok." },
+    { "album": "Album 3", "artist": "Artist 3", "review": "Ei minun makuuni." }
+  ]
+  
