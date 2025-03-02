@@ -1,0 +1,39 @@
+.home {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .reviews {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    width: 100%;
+  }
+  
+  .review-box {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .cover {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  @media (min-width: 900px) {
+    .reviews {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  
