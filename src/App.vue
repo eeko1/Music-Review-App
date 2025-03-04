@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<script setup>
-import NavigationComponent from './components/Navigation.vue';
-import FooterComponent from './components/Footer.vue';
+<script setup lang="ts">
+import NavigationComponent from './components/Navigation.vue'
+import FooterComponent from './components/Footer.vue'
 </script>
