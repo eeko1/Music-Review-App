@@ -2,6 +2,7 @@
 @import url('./layout/home.css');
 @import url('./layout/footer.css');
 @import url('./components/reviewcard.css');
+@import url(./components/profile.css);
 
 html,
 body {

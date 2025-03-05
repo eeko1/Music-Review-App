@@ -27,7 +27,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed } from 'vue'
 import { useReviewsStore } from '../stores/store'
 import { storeToRefs } from 'pinia'
