@@ -29,21 +29,37 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useReviewsStore } from '../stores/store'
 import { storeToRefs } from 'pinia'
 
+// Define the Review type
+interface Review {
+  album: string
+  artist: string
+  cover_image: string
+  category: string
+  label: string
+  reviewed: string
+  review: string
+  points: number
+}
+
 const store = useReviewsStore()
 const { reviews } = storeToRefs(store)
-
 const selectedCategory = ref('')
 
+// Fetch reviews when component loads
+onMounted(() => {
+  store.fetchReviews()
+})
+
 const uniqueCategories = computed(() => {
-  return [...new Set(reviews.value.map((review) => review.category))]
+  return [...new Set(reviews.value.map((review: Review) => review.category))]
 })
 
 const filteredReviews = computed(() => {
   if (!selectedCategory.value) return reviews.value
-  return reviews.value.filter((review) => review.category === selectedCategory.value)
+  return reviews.value.filter((review: Review) => review.category === selectedCategory.value)
 })
 </script>

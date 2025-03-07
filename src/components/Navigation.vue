@@ -5,6 +5,7 @@
       <router-link to="/">Home</router-link>
       <router-link to="/reviews">Reviews</router-link>
       <router-link to="/profile">Profile</router-link>
+      <router-link to="/addreview">Add Review</router-link>
     </div>
   </nav>
 </template>

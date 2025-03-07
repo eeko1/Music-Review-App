@@ -1,0 +1,113 @@
+{
+  "reviews": [
+    {
+      "id": "1",
+      "album": "Abbey Road",
+      "artist": "The Beatles",
+      "cover_image": "https://upload.wikimedia.org/wikipedia/en/4/42/Beatles_-_Abbey_Road.jpg",
+      "category": "Rock",
+      "label": "Apple Records",
+      "reviewed": "2025-02-20",
+      "review": "Timeless classic with legendary production.",
+      "points": 10
+    },
+    {
+      "id": "2",
+      "album": "The Dark Side of the Moon",
+      "artist": "Pink Floyd",
+      "cover_image": "https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png",
+      "category": "Progressive Rock",
+      "label": "Harvest Records",
+      "reviewed": "2025-02-18",
+      "review": "A masterpiece that defines the genre.",
+      "points": 10
+    },
+    {
+      "id": "3",
+      "album": "To Pimp a Butterfly",
+      "artist": "Kendrick Lamar",
+      "cover_image": "https://upload.wikimedia.org/wikipedia/en/f/f6/Kendrick_Lamar_-_To_Pimp_a_Butterfly.png",
+      "category": "Hip-Hop",
+      "label": "Top Dawg Entertainment",
+      "reviewed": "2025-02-15",
+      "review": "Politically charged and musically innovative.",
+      "points": 9
+    },
+    {
+      "id": "4",
+      "album": "Rumours",
+      "artist": "Fleetwood Mac",
+      "cover_image": "https://upload.wikimedia.org/wikipedia/en/f/fb/FMacRumours.PNG",
+      "category": "Rock",
+      "label": "Warner Bros.",
+      "reviewed": "2025-02-10",
+      "review": "Emotional, beautifully crafted, and unforgettable.",
+      "points": 10
+    },
+    {
+      "id": "5",
+      "album": "Thriller",
+      "artist": "Michael Jackson",
+      "cover_image": "https://upload.wikimedia.org/wikipedia/en/5/55/Michael_Jackson_-_Thriller.png",
+      "category": "Pop",
+      "label": "Epic Records",
+      "reviewed": "2025-02-05",
+      "review": "The best-selling album for a reason!",
+      "points": 10
+    },
+    {
+      "id": "6",
+      "album": "OK Computer",
+      "artist": "Radiohead",
+      "cover_image": "https://upload.wikimedia.org/wikipedia/en/b/ba/Radioheadokcomputer.png",
+      "category": "Alternative Rock",
+      "label": "Parlophone",
+      "reviewed": "2025-02-02",
+      "review": "A groundbreaking album that still feels futuristic.",
+      "points": 10
+    },
+    {
+      "id": "7",
+      "album": "Back to Black",
+      "artist": "Amy Winehouse",
+      "cover_image": "https://upload.wikimedia.org/wikipedia/fi/1/10/Amy_Winehouse_-_Back_to_Black.JPG",
+      "category": "Soul",
+      "label": "Island Records",
+      "reviewed": "2025-01-28",
+      "review": "Raw, emotional, and truly timeless.",
+      "points": 9
+    },
+    {
+      "id": "8",
+      "album": "Nevermind",
+      "artist": "Nirvana",
+      "cover_image": "https://upload.wikimedia.org/wikipedia/en/b/b7/NirvanaNevermindalbumcover.jpg",
+      "category": "Grunge",
+      "label": "DGC Records",
+      "reviewed": "2025-01-25",
+      "review": "The album that defined a generation.",
+      "points": 10
+    },
+    {
+      "id": "9",
+      "album": "Lemonade",
+      "artist": "Beyoncé",
+      "cover_image": "https://upload.wikimedia.org/wikipedia/en/5/53/Beyonce_-_Lemonade_%28Official_Album_Cover%29.png",
+      "category": "R&B",
+      "label": "Columbia Records",
+      "reviewed": "2025-01-20",
+      "review": "A visual and musical masterpiece.",
+      "points": 9
+    },
+    {
+      "id": "a146",
+      "album": "Noidankehä",
+      "artist": "Melo",
+      "category": "Rap",
+      "review": "Tosi hyvä albumi!",
+      "reviewed": "2025-03-07",
+      "points": 10,
+      "cover_image": "https://upload.wikimedia.org/wikipedia/fi/thumb/9/96/Noidankeh%C3%A4.jpg/800px-Noidankeh%C3%A4.jpg"
+    }
+  ]
+}
