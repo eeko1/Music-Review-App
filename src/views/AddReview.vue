@@ -2,6 +2,9 @@
   <div class="add-review">
     <h2>Add a New Review</h2>
     <form @submit.prevent="submitReview">
+      <label>Reviewer name:</label>
+      <input v-model="reviewer_name" required />
+
       <label>Album:</label>
       <input v-model="album" required />
 
@@ -9,9 +12,16 @@
       <input v-model="artist" required />
 
       <label>Category:</label>
-      <input v-model="category" required />
+      <select v-model="category" required>
+        <option value="pop">Pop</option>
+        <option value="rock">Rock</option>
+        <option value="hip-hop">Hip-Hop</option>
+        <option value="jazz">Jazz</option>
+        <option value="classical">Classical</option>
+        <option value="electronic">Electronic</option>
+      </select>
 
-      <label>Review:</label>
+      <label>Comments:</label>
       <textarea v-model="review" required></textarea>
 
       <label>Score (1-10):</label>
@@ -27,7 +37,14 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { createClient } from '@supabase/supabase-js'
 
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL
+const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY
+
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+
+const reviewer_name = ref('')
 const album = ref('')
 const artist = ref('')
 const category = ref('')
@@ -39,6 +56,7 @@ const submitReview = async () => {
   const today = new Date().toISOString().split('T')[0]
 
   const newReview = {
+    reviewer_name: reviewer_name.value,
     album: album.value,
     artist: artist.value,
     category: category.value,
@@ -48,22 +66,25 @@ const submitReview = async () => {
     cover_image: cover_image.value,
   }
 
-  const response = await fetch('http://localhost:3000/reviews', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(newReview),
-  })
+  const { data, error } = await supabase.from('reviews').insert([newReview])
 
-  if (response.ok) {
-    alert('Review added successfully!')
-    album.value = ''
-    artist.value = ''
-    category.value = ''
-    review.value = ''
-    points.value = 1
-    cover_image.value = ''
-  } else {
+  if (error) {
+    console.error('Error:', error)
     alert('Failed to add review.')
+  } else {
+    console.log('Review inserted:', data)
+    alert('Review added successfully!')
+    resetForm()
   }
+}
+
+const resetForm = () => {
+  reviewer_name.value = ''
+  album.value = ''
+  artist.value = ''
+  category.value = ''
+  review.value = ''
+  points.value = 1
+  cover_image.value = ''
 }
 </script>
