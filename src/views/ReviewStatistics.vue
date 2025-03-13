@@ -1,3 +1,23 @@
+<template>
+  <div class="chart-section">
+    <h3>Review Statistics</h3>
+    <div class="charts-container">
+      <div class="chart-container">
+        <h4>Top 3 Genres</h4>
+        <canvas id="genreChart"></canvas>
+      </div>
+      <div class="chart-container">
+        <h4>Top 3 Artists</h4>
+        <canvas id="artistChart"></canvas>
+      </div>
+      <div class="chart-container">
+        <h4>Top 3 Reviewers</h4>
+        <canvas id="reviewerChart"></canvas>
+      </div>
+    </div>
+  </div>
+</template>
+
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
 import { Chart, registerables } from 'chart.js'
@@ -41,14 +61,23 @@ const fetchReviews = async () => {
   loading.value = false
 }
 
-onMounted(fetchReviews)
+const getTopThree = (counts: Record<string, number>) => {
+  const sorted = Object.entries(counts)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 3)
+  const total = sorted.reduce((sum, [, count]) => sum + count, 0)
+  return sorted.map(([label, count]) => ({
+    label,
+    percentage: ((count / total) * 100).toFixed(1),
+  }))
+}
 
 const genreCounts = computed(() => {
   const counts: Record<string, number> = {}
   reviews.value.forEach((review) => {
     counts[review.category] = (counts[review.category] || 0) + 1
   })
-  return counts
+  return getTopThree(counts)
 })
 
 const artistCounts = computed(() => {
@@ -56,7 +85,7 @@ const artistCounts = computed(() => {
   reviews.value.forEach((review) => {
     counts[review.artist] = (counts[review.artist] || 0) + 1
   })
-  return counts
+  return getTopThree(counts)
 })
 
 const reviewerCounts = computed(() => {
@@ -64,20 +93,24 @@ const reviewerCounts = computed(() => {
   reviews.value.forEach((review) => {
     counts[review.reviewer_name] = (counts[review.reviewer_name] || 0) + 1
   })
-  return counts
+  return getTopThree(counts)
 })
 
-const createChart = (canvasId: string, data: Record<string, number>, label: string) => {
+const createChart = (
+  canvasId: string,
+  data: { label: string; percentage: string }[],
+  label: string,
+) => {
   const ctx = document.getElementById(canvasId) as HTMLCanvasElement
   if (!ctx) return
   new Chart(ctx, {
     type: 'pie',
     data: {
-      labels: Object.keys(data),
+      labels: data.map((d) => `${d.label} (${d.percentage}%)`),
       datasets: [
         {
           label,
-          data: Object.values(data),
+          data: data.map((d) => parseFloat(d.percentage)),
           backgroundColor: ['#ff6384', '#36a2eb', '#ffce56'],
         },
       ],
@@ -91,20 +124,9 @@ const createChart = (canvasId: string, data: Record<string, number>, label: stri
 
 onMounted(() => {
   fetchReviews().then(() => {
-    createChart('genreChart', genreCounts.value, 'Popular Genres')
-    createChart('artistChart', artistCounts.value, 'Popular Artists')
+    createChart('genreChart', genreCounts.value, 'Top Genres')
+    createChart('artistChart', artistCounts.value, 'Top Artists')
     createChart('reviewerChart', reviewerCounts.value, 'Top Reviewers')
   })
 })
 </script>
-
-<template>
-  <div class="chart-section">
-    <h3>Review Statistics</h3>
-    <div class="charts-container">
-      <div class="chart"><canvas id="genreChart"></canvas></div>
-      <div class="chart"><canvas id="artistChart"></canvas></div>
-      <div class="chart"><canvas id="reviewerChart"></canvas></div>
-    </div>
-  </div>
-</template>

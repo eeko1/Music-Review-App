@@ -13,12 +13,12 @@
 
       <label>Category:</label>
       <select v-model="category" required>
-        <option value="pop">Pop</option>
-        <option value="rock">Rock</option>
-        <option value="hip-hop">Hip-Hop</option>
-        <option value="jazz">Jazz</option>
-        <option value="classical">Classical</option>
-        <option value="electronic">Electronic</option>
+        <option value="Pop">Pop</option>
+        <option value="Rock">Rock</option>
+        <option value="Hip-hop">Hip-Hop</option>
+        <option value="Jazz">Jazz</option>
+        <option value="Classical">Classical</option>
+        <option value="Electronic">Electronic</option>
       </select>
 
       <label>Comments:</label>

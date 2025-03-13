@@ -13,20 +13,18 @@
     <div id="reviews">
       <div v-if="loading">Loading reviews...</div>
       <div v-else-if="error" class="error-message">{{ error }}</div>
-      <div v-else>
-        <div v-for="review in filteredReviews" :key="review.id" class="review-box">
-          <div class="cover-container">
-            <img :src="review.cover_image" :alt="review.album" class="cover" />
-            <div class="score">{{ review.points }}/10</div>
-          </div>
-          <div class="review-content">
-            <p class="category">{{ review.category }}</p>
-            <h3 class="album">{{ review.album }}</h3>
-            <p class="artist">{{ review.artist }}</p>
-            <p class="review-text">{{ review.review }}</p>
-            <p class="reviewer">By: {{ review.reviewer_name }}</p>
-            <p class="date">{{ review.reviewed }}</p>
-          </div>
+      <div v-for="review in filteredReviews" :key="review.id" class="review-box">
+        <div class="cover-container">
+          <img :src="review.cover_image" :alt="review.album" class="cover" />
+          <div class="score">{{ review.points }}</div>
+        </div>
+        <div class="review-content">
+          <p class="category">{{ review.category }}</p>
+          <h3 class="album">{{ review.album }}</h3>
+          <p class="artist">{{ review.artist }}</p>
+          <p class="review-text">{{ review.review }}</p>
+          <p class="reviewer">By {{ review.reviewer_name }}</p>
+          <p class="date">{{ review.reviewed }}</p>
         </div>
       </div>
     </div>
