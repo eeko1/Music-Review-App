@@ -1,6 +1,6 @@
 <template>
   <div class="chart-section">
-    <h3>Review Statistics</h3>
+    <h2>Review Statistics</h2>
     <div class="charts-container">
       <div class="chart-container">
         <h4>Top 3 Genres</h4>

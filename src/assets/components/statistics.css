@@ -4,7 +4,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 65px 20px;
+  padding: 5rem 1.25rem;
+  min-height: calc(100vh - 50px);
 }
 
 .charts-container {
@@ -55,5 +56,11 @@ canvas {
   canvas {
     height: 400px;
     max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .chart-section {
+    padding: 2rem 1rem;
   }
 }
