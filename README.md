@@ -1,39 +1,40 @@
-# music-review-app
+# 🎵 Music Review App
 
-This template should help get you started developing with Vue 3 in Vite.
+I created this **Music Review App** as part of my studies during "Uudet Teknologiat" course. It was built using **Vue.js**, **TypeScript**, and **CSS**, with **Chart.js** for data visualization and **Supabase** as the backend.
 
-## Recommended IDE Setup
+## 🚀 Features
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Users can post reviews of their favorite albums and rate them on a scale of 1 to 10. They can also explore reviews from others, discover new music, and get inspired to check out different albums. Additionally, users have the ability to edit or delete their reviews and view insights, such as who has written the most reviews.
 
-## Type Support for `.vue` Imports in TS
+## 🛠️ Tech Stack
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- **Vue.js** – Frontend framework
+- **TypeScript** – Type-safe development
+- **CSS** – Custom styling for a modern look
+- **Chart.js** – Graphs and data visualization
+- **Supabase** – Database backend
 
-## Customize configuration
+## 🔗 Try the Music Review App
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+[🎧 **Explore the App**](https://users.metropolia.fi/~eemiko/music-review-app/)
 
-## Project Setup
+## 🖥️ Project Setup
+
+### 1️⃣ Clone the Repository
+
+```sh
+git clone https://github.com/eeko1/music-review-app.git
+cd music-review-app
+```
+
+### 2️⃣ Install Dependencies
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+3️⃣ Run the Development Server
 
 ```sh
 npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```

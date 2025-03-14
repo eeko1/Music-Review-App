@@ -47,6 +47,8 @@
           <option value="Jazz">Jazz</option>
           <option value="Classical">Classical</option>
           <option value="Electronic">Electronic</option>
+          <option value="R&B">R&B</option>
+          <option value="Grunge">Grunge</option>
         </select>
 
         <label>Comments:</label>

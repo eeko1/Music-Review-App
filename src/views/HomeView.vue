@@ -8,8 +8,6 @@
       discover hidden gems, and read honest, in-depth reviews from passionate music lovers. Click
       the button to explore the world of music like never before!
     </p>
-    <router-link to="/reviews" aria-label="Get Started with Code Courses" class="hero-button">
-      Reviews
-    </router-link>
+    <router-link to="/reviews" aria-label="Reviews" class="hero-button"> Reviews </router-link>
   </section>
 </template>

@@ -23,6 +23,7 @@
   text-align: center;
   width: 350px;
   height: 400px;
+  padding-bottom: 20px; /* Default padding */
 }
 
 .chart-container h4 {
@@ -62,5 +63,9 @@ canvas {
 @media (max-width: 600px) {
   .chart-section {
     padding: 2rem 1rem;
+  }
+
+  .chart-container {
+    padding-bottom: 60px;
   }
 }
