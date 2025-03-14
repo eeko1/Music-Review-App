@@ -34,13 +34,13 @@
       <div class="modal-content">
         <h2>Edit Review</h2>
         <label>Album:</label>
-        <input v-model="editedReview.album" />
+        <input v-model="editedReview.album" v-if="editedReview" />
 
         <label>Artist:</label>
-        <input v-model="editedReview.artist" />
+        <input v-model="editedReview.artist" v-if="editedReview" />
 
         <label>Category:</label>
-        <select v-model="editedReview.category" required>
+        <select v-model="editedReview.category" required v-if="editedReview">
           <option value="Pop">Pop</option>
           <option value="Rock">Rock</option>
           <option value="Hip-hop">Hip-Hop</option>
@@ -50,13 +50,20 @@
         </select>
 
         <label>Comments:</label>
-        <textarea v-model="editedReview.review"></textarea>
+        <textarea v-model="editedReview.review" v-if="editedReview"></textarea>
 
         <label>Score (1-10):</label>
-        <input type="number" v-model.number="editedReview.points" min="1" max="10" required />
+        <input
+          type="number"
+          v-model.number="editedReview.points"
+          min="1"
+          max="10"
+          required
+          v-if="editedReview"
+        />
 
         <label>Cover Image URL:</label>
-        <input v-model="editedReview.cover_image" required />
+        <input v-model="editedReview.cover_image" required v-if="editedReview" />
 
         <button @click="saveChanges">Save edit</button>
         <button @click="deleteReview">Delete review</button>
@@ -133,7 +140,7 @@ const saveChanges = async () => {
       category: editedReview.value.category,
       review: editedReview.value.review,
       points: editedReview.value.points,
-      cover_image: editedReview.value.cover_image, // Ensure the cover image URL is updated
+      cover_image: editedReview.value.cover_image,
     })
     .eq('id', editedReview.value.id)
 
