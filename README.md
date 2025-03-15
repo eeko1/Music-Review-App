@@ -33,7 +33,14 @@ cd music-review-app
 npm install
 ```
 
-3️⃣ Run the Development Server
+### 3️⃣ Edit .env file 
+
+```sh
+VITE_SUPABASE_URL="your_supabase_url"
+VITE_SUPABASE_ANON_KEY="your_supabase_key"
+```
+
+### 4️⃣ Run the Development Server
 
 ```sh
 npm run dev
